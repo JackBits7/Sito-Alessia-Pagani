@@ -256,69 +256,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script>
-        // Smooth Page Transitions
-        window.addEventListener('load', () => { document.body.classList.add('loaded'); });
-
-        // Navbar Scroll Logic with precise dimensions
-        const navbar = document.getElementById('navbar');
-        const navInner = document.getElementById('nav-inner');
-        const logoDot = document.getElementById('logo-dot');
-        const contactBtn = document.getElementById('contact-btn');
-        const mobileBtn = document.getElementById('mobile-btn');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.remove('bg-transparent', 'border-transparent');
-                navbar.classList.add('bg-cobalt/95', 'backdrop-blur-md', 'shadow-lg');
-
-                navInner.classList.remove('h-28', 'text-midnight');
-                navInner.classList.add('h-16', 'text-dust');
-
-                logoDot.classList.remove('text-cobalt');
-                logoDot.classList.add('text-dust');
-
-                mobileBtn.classList.remove('text-midnight');
-                mobileBtn.classList.add('text-dust');
-
-                contactBtn.classList.remove('hover:bg-cream', 'hover:text-cobalt');
-                contactBtn.classList.add('border-dust', 'hover:bg-dust', 'hover:text-cobalt');
-            } else {
-                navbar.classList.add('bg-transparent', 'border-transparent');
-                navbar.classList.remove('bg-cobalt/95', 'backdrop-blur-md', 'shadow-lg');
-
-                navInner.classList.add('h-28', 'text-midnight');
-                navInner.classList.remove('h-16', 'text-dust');
-
-                logoDot.classList.add('text-cobalt');
-                logoDot.classList.remove('text-dust');
-
-                mobileBtn.classList.add('text-midnight');
-                mobileBtn.classList.remove('text-dust');
-
-                contactBtn.classList.add('hover:bg-cream', 'hover:text-cobalt');
-                contactBtn.classList.remove('border-dust', 'hover:bg-dust');
-            }
-        });
-
-        // Mobile Menu Logic
-        document.getElementById('mobile-btn').addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-
-        // Staggered Fade-in Up Reveals using Intersection Observer
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
