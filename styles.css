@@ -1,0 +1,120 @@
+/* 
+    Editorial Overrides for Alessia Pagani Portfolio
+    Focus: Warm colors, typographic hierarchy, dynamic fading animations 
+*/
+
+/* Base overrides */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Page Transition: Smooth fade-in on load */
+.page-transition {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.page-transition.loaded {
+    opacity: 1;
+}
+
+/* Elegant Scrollbar (matching Cream/Dust aesthetic) */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FDFBF7;
+    /* Cream */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #B8C5D6;
+    /* Dust blue */
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0047AB;
+    /* Cobalt */
+}
+
+/* 
+    Advanced Scroll Reveal Classes 
+    Triggered via IntersectionObserver JS adding 'is-visible' class
+*/
+.reveal {
+    transition: opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1), transform 1.5s cubic-bezier(0.25, 1, 0.5, 1), filter 1.5s ease;
+    will-change: opacity, transform;
+    filter: blur(4px);
+    /* Slight blur on hidden elements for more elegant pop */
+}
+
+/* Default vertical reveal */
+.reveal.is-visible {
+    opacity: 1 !important;
+    transform: translateY(0) translateX(0) scale(1) !important;
+    filter: blur(0px);
+}
+
+/* 
+    Form Floating Label Automations Overrides (For Cream backgrounds)
+*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #FDFBF7 inset !important;
+    /* Cream */
+    -webkit-text-fill-color: #0A192F !important;
+    /* Midnight */
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Cobalt Form Override */
+.contact-form-cobalt input:-webkit-autofill,
+.contact-form-cobalt textarea:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #0047AB inset !important;
+    -webkit-text-fill-color: #FDFBF7 !important;
+}
+
+/* Remove default focus outline for elegant custom border */
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+/* Ensure Masonry blocks don't break improperly inside content */
+.break-inside-avoid {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+/* Decorative scroll line animation */
+@keyframes drawLine {
+    0% {
+        transform: scaleY(0);
+    }
+
+    50% {
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+
+    50.1% {
+        transform-origin: bottom;
+    }
+
+    100% {
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+}
+
+.scroll-line-animate {
+    animation: drawLine 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
+}

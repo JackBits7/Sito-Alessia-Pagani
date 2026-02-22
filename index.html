@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alessia Pagani | Viaggio nella Fotografia</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FDFBF7',
+                        midnight: '#0A192F',
+                        dust: '#B8C5D6',
+                        cobalt: '#0047AB',
+                        accent: '#E5E0D8',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    letterSpacing: {
+                        extrawide: '0.25em',
+                        widest: '0.15em',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-cream text-midnight font-sans antialiased selection:bg-cobalt selection:text-cream page-transition">
+
+    <!-- Global Editorial Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-500 bg-transparent border-b border-transparent" id="navbar">
+        <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="flex justify-between items-center h-28 transition-all duration-500 text-midnight"
+                id="nav-inner">
+                <!-- Logo -->
+                <div class="flex-shrink-0 relative z-20">
+                    <a href="index.html"
+                        class="text-3xl lg:text-4xl font-serif font-medium tracking-wider transition-colors duration-500 logo-text">
+                        AP<span class="text-cobalt transition-colors duration-500" id="logo-dot">.</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-14">
+                    <a href="index.html"
+                        class="text-xs uppercase tracking-extrawide font-medium relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-[1px] after:bg-current transition-all duration-500 nav-link">Home</a>
+                    <a href="about.html"
+                        class="text-xs uppercase tracking-extrawide font-medium opacity-60 hover:opacity-100 transition-opacity duration-500 nav-link">Bio</a>
+                    <a href="portfolio.html"
+                        class="text-xs uppercase tracking-extrawide font-medium opacity-60 hover:opacity-100 transition-opacity duration-500 nav-link">Portfolio</a>
+                    <a href="contatti.html"
+                        class="ml-10 px-8 py-3 text-xs uppercase tracking-extrawide font-medium border border-current hover:bg-cream hover:text-cobalt transition-all duration-500 rounded-sm"
+                        id="contact-btn">Iniziamo a Creare</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden relative z-20">
+                    <button type="button" class="focus:outline-none transition-colors duration-500 text-midnight"
+                        aria-controls="mobile-menu" id="mobile-btn">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-cobalt/95 backdrop-blur-md absolute top-0 left-0 w-full h-screen z-10 flex flex-col items-center justify-center space-y-8"
+            id="mobile-menu">
+            <a href="index.html" class="text-xl font-serif italic text-dust">Home</a>
+            <a href="about.html"
+                class="text-xl font-serif italic text-dust/70 hover:text-dust transition-colors">Bio</a>
+            <a href="portfolio.html"
+                class="text-xl font-serif italic text-dust/70 hover:text-dust transition-colors">Portfolio</a>
+            <a href="contatti.html"
+                class="text-xl font-serif italic text-dust/70 hover:text-dust transition-colors mt-8 border-b border-dust/20 pb-2">Contatti</a>
+        </div>
+    </nav>
+
+    <!-- Editorial Hero Section -->
+    <header id="hero" class="relative min-h-[95vh] flex items-center overflow-hidden bg-cream pt-28">
+        <div
+            class="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+
+            <!-- Hero Text (Overlapping Image) -->
+            <div class="md:col-span-7 lg:col-span-7 relative z-20 pt-10 md:pt-0 text-center md:text-left">
+                <div class="reveal opacity-0 translate-y-8" style="transition-delay: 200ms;">
+                    <span
+                        class="text-cobalt font-medium tracking-extrawide uppercase text-xs mb-8 flex items-center justify-center md:justify-start gap-4">
+                        <div class="w-12 h-[1px] bg-cobalt hidden md:block"></div>
+                        Nuovi Orizzonti
+                    </span>
+                </div>
+
+                <h1 class="text-5xl sm:text-6xl md:text-[5.5rem] lg:text-[6.5rem] font-serif text-cobalt leading-[1.1] tracking-tight mb-8 reveal opacity-0 translate-y-12"
+                    style="transition-delay: 400ms;">
+                    Catturare l'essenza,<br><span class="italic text-midnight block md:inline md:ml-12 mt-2 md:mt-0">un
+                        click alla volta.</span>
+                </h1>
+
+                <p class="text-base sm:text-lg md:text-xl text-midnight/80 font-light max-w-lg mb-12 leading-relaxed mx-auto md:mx-0 reveal opacity-0 translate-y-8"
+                    style="transition-delay: 600ms;">
+                    Inizia il mio viaggio nella fotografia. Alla scoperta di volti, luoghi e storie emozionanti da
+                    raccontare in modo autentico.
+                </p>
+
+                <div class="reveal opacity-0 translate-y-8" style="transition-delay: 800ms;">
+                    <a href="contatti.html"
+                        class="group inline-flex items-center gap-4 md:gap-6 text-xs sm:text-sm uppercase tracking-extrawide font-medium text-midnight hover:text-cobalt transition-colors duration-500">
+                        <span>Lavoriamo insieme al tuo progetto</span>
+                        <div
+                            class="w-12 md:w-16 h-[1px] bg-midnight group-hover:bg-cobalt group-hover:w-16 md:group-hover:w-24 transition-all duration-500">
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="md:col-span-5 lg:col-span-5 relative z-10 mt-16 md:mt-0 reveal opacity-0 translate-y-16"
+                style="transition-delay: 500ms;">
+                <div
+                    class="relative w-full aspect-[3/4] overflow-hidden rounded-sm shadow-2xl shadow-midnight/10 border-l-4 border-b-4 border-cobalt">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=1200"
+                        alt="Alessia Pagani Photography"
+                        class="w-full h-full object-cover object-top filter contrast-[1.1] grayscale-[0.2]">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Elegant Scroll Down -->
+        <div class="absolute bottom-10 left-6 sm:left-8 lg:left-12 reveal opacity-0" style="transition-delay: 1000ms;">
+            <div class="flex flex-col items-center gap-4">
+                <span class="text-[0.65rem] uppercase tracking-extrawide text-midnight/40"
+                    style="writing-mode: vertical-rl;">Scroll</span>
+                <div class="w-[1px] h-16 bg-midnight/20">
+                    <div class="w-full h-1/2 bg-cobalt origin-top scroll-line-animate"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Editorial Preview Layout -->
+    <section id="preview" class="py-32 bg-cream relative border-t border-accent/30">
+        <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+
+            <div class="flex flex-col md:flex-row justify-between items-end mb-24 reveal opacity-0 translate-y-8">
+                <h2 class="text-4xl md:text-5xl font-serif text-cobalt italic">Primi Scatti</h2>
+                <a href="portfolio.html"
+                    class="text-xs uppercase tracking-extrawide text-midnight mt-6 md:mt-0 font-medium hover:text-cobalt transition-colors border-b border-midnight/30 hover:border-cobalt pb-1">Costruiamo
+                    il Portfolio</a>
+            </div>
+
+            <!-- Asymmetric Editorial Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-y-16 md:gap-8 lg:gap-12 items-center">
+
+                <!-- Main Featured Post -->
+                <a href="portfolio.html" class="md:col-span-7 group block relative reveal opacity-0 translate-y-16">
+                    <div
+                        class="overflow-hidden rounded-sm shadow-xl shadow-midnight/5 border-r border-t border-cobalt/30 group-hover:border-cobalt transition-colors duration-500">
+                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=1000"
+                            alt="Ritratti"
+                            class="w-full aspect-square md:aspect-[4/3] object-cover transform transition-transform duration-[1.5s] ease-out group-hover:scale-105 filter grayscale-[0.1]">
+                    </div>
+                    <!-- Overlapping organic text box -->
+                    <div
+                        class="bg-white p-6 md:p-8 md:absolute md:-bottom-12 md:-right-12 lg:-right-16 w-[90%] mx-auto -mt-12 relative md:mt-0 md:w-3/4 lg:w-2/3 shadow-2xl shadow-midnight/10 transition-transform duration-700 md:group-hover:-translate-y-2 z-10 border-l-4 border-cobalt rounded-sm">
+                        <span
+                            class="text-[0.65rem] md:text-xs uppercase tracking-extrawide text-cobalt font-medium mb-3 block">Sperimentazione</span>
+                        <h3 class="text-2xl md:text-3xl font-serif text-midnight mb-2 md:mb-4">Sguardi Velati</h3>
+                        <p class="text-midnight/60 font-light text-xs md:text-sm leading-relaxed">
+                            Esplorando l'intimità del ritratto attraverso la luce naturale e le espressioni spontanee in
+                            un progetto personale.
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Secondary Featured Post -->
+                <a href="portfolio.html"
+                    class="md:col-span-4 md:col-start-9 group mt-16 md:mt-0 block reveal opacity-0 translate-y-16"
+                    style="transition-delay: 200ms;">
+                    <div
+                        class="overflow-hidden rounded-sm shadow-xl shadow-midnight/5 mb-6 border-b border-l border-cobalt/30 group-hover:border-cobalt transition-colors duration-500">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800"
+                            alt="Luci d'Autunno"
+                            class="w-full aspect-[3/4] object-cover transform transition-transform duration-[1.5s] ease-out group-hover:scale-105 filter contrast-110">
+                    </div>
+                    <div>
+                        <span class="text-xs uppercase tracking-extrawide text-cobalt font-medium mb-2 block">Luce
+                            Esterna</span>
+                        <h3 class="text-2xl font-serif text-midnight">Luci d'Autunno</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Editorial Footer -->
+    <footer class="bg-cobalt py-10">
+        <div class="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 text-dust">
+                <div class="md:col-span-2">
+                    <a href="index.html"
+                        class="text-3xl font-serif font-medium text-dust mb-4 block hover:opacity-80 transition-opacity">AP<span
+                            class="text-accent">.</span></a>
+                    <p class="text-dust/80 font-light text-xs max-w-sm leading-relaxed">
+                        Iniziamo a creare. Fotografia appassionata, ricerca visiva e nuovi progetti da sviluppare
+                        insieme a te.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-[0.65rem] uppercase tracking-extrawide text-dust/60 font-medium mb-4">Menu</h4>
+                    <ul class="space-y-2 text-xs font-light text-dust/90">
+                        <li><a href="about.html" class="hover:text-white transition-colors">La Mia Storia</a></li>
+                        <li><a href="portfolio.html" class="hover:text-white transition-colors">Primi Lavori</a></li>
+                        <li><a href="contatti.html" class="hover:text-white transition-colors">Lavoriamo Insieme</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-[0.65rem] uppercase tracking-extrawide text-dust/60 font-medium mb-4">Social</h4>
+                    <ul class="space-y-2 text-xs font-light text-dust/90">
+                        <li><a href="#" class="hover:text-white transition-colors">Instagram</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Behance</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-center pt-6 border-t border-dust/20 text-[0.65rem] font-light text-dust/50">
+                <p>&copy;
+                    <script>document.write(new Date().getFullYear())</script> AP Photography.
+                </p>
+                <p class="mt-4 md:mt-0 uppercase tracking-widest">Inizio di un viaggio visivo.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Smooth Page Transitions
+        window.addEventListener('load', () => { document.body.classList.add('loaded'); });
+
+        // Navbar Scroll Logic with precise dimensions
+        const navbar = document.getElementById('navbar');
+        const navInner = document.getElementById('nav-inner');
+        const logoDot = document.getElementById('logo-dot');
+        const contactBtn = document.getElementById('contact-btn');
+        const mobileBtn = document.getElementById('mobile-btn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.remove('bg-transparent', 'border-transparent');
+                navbar.classList.add('bg-cobalt/95', 'backdrop-blur-md', 'shadow-lg');
+
+                navInner.classList.remove('h-28', 'text-midnight');
+                navInner.classList.add('h-16', 'text-dust');
+
+                logoDot.classList.remove('text-cobalt');
+                logoDot.classList.add('text-dust');
+
+                mobileBtn.classList.remove('text-midnight');
+                mobileBtn.classList.add('text-dust');
+
+                contactBtn.classList.remove('hover:bg-cream', 'hover:text-cobalt');
+                contactBtn.classList.add('border-dust', 'hover:bg-dust', 'hover:text-cobalt');
+            } else {
+                navbar.classList.add('bg-transparent', 'border-transparent');
+                navbar.classList.remove('bg-cobalt/95', 'backdrop-blur-md', 'shadow-lg');
+
+                navInner.classList.add('h-28', 'text-midnight');
+                navInner.classList.remove('h-16', 'text-dust');
+
+                logoDot.classList.add('text-cobalt');
+                logoDot.classList.remove('text-dust');
+
+                mobileBtn.classList.add('text-midnight');
+                mobileBtn.classList.remove('text-dust');
+
+                contactBtn.classList.add('hover:bg-cream', 'hover:text-cobalt');
+                contactBtn.classList.remove('border-dust', 'hover:bg-dust');
+            }
+        });
+
+        // Mobile Menu Logic
+        document.getElementById('mobile-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Staggered Fade-in Up Reveals using Intersection Observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>
